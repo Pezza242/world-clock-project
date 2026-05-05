@@ -1,17 +1,34 @@
-function updateParisTime() {
-  let date = document.querySelector("#city-date");
-  let tzDate = moment.tz("Europe/Paris").format("Do MMMM YYYY");
+function updateCityTime() {
+  let tzCities = [
+    "America/Los_Angeles",
+    "Europe/Rome",
+    "Africa/Lagos",
+    "Asia/Dubai",
+    "Australia/Melbourne",
+  ];
+  let citySection = document.querySelector("#city-section");
+  let addCities = "";
 
-  date.innerHTML = tzDate;
+  tzCities.forEach((tzCity) => {
+    let city = tzCity.replace("_", " ").split("/")[1];
+    let cityDate = moment.tz(tzCity).format("Do MMMM YYYY");
+    let cityTime = moment.tz(tzCity).format("H:mm:ss [<small>]A[</small>]");
 
-  let time = document.querySelector("#city-time");
-  let tzTime = moment.tz("Europe/Paris").format("H:mm:ss [<small>]A[</small>]");
-
-  time.innerHTML = tzTime;
+    addCities += `
+    <div class="left">        
+            <h2 class="city-name">${city}</h2>
+          <p class="city-date">${cityDate}</p>
+        </div>
+          <div class="city-time">${cityTime}</div>`;
+  });
+  citySection.innerHTML = addCities;
 }
 
 function updateCity(event) {
   let cityTz = event.target.value;
+  if (cityTz === "current") {
+    cityTz = moment.tz.guess(true);
+  }
   let cityName = cityTz.replace("_", " ").split("/")[1];
   let cityDate = moment.tz(cityTz).format("Do MMMM YYYY");
   let cityTime = moment.tz(cityTz).format("H:mm:ss [<small>]A[</small>]");
@@ -19,13 +36,14 @@ function updateCity(event) {
 
   city.innerHTML = `       
    <div class="left">        
-            <h2 id="city-name">${cityName}</h2>
-          <p id="city-date">${cityDate}</p>
+            <h2 class="city-name">${cityName}</h2>
+          <p class="city-date">${cityDate}</p>
         </div>
-          <div id="city-time">${cityTime}</div>`;
+          <div class="city-time">${cityTime}</div>`;
 }
 
-updateParisTime();
-setInterval(updateParisTime, 1000);
+updateCityTime();
+setInterval(updateCityTime, 1000);
+
 let selectCity = document.querySelector("#select");
 selectCity.addEventListener("change", updateCity);

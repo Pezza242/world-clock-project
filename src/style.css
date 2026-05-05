@@ -41,20 +41,21 @@ hr {
 }
 #city-section {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-#city-name {
+.city-name {
   font-size: 32px;
   font-weight: 500;
   margin: 15px 0px;
 }
-#city-date {
+.city-date {
   font-size: 18px;
   font-weight: 200;
   margin: 5px 0px;
 }
-#city-time {
+.city-time {
   font-size: 32px;
   font-weight: 600;
 }
