@@ -8,12 +8,55 @@ body {
   max-width: 600px;
   margin: 0px auto;
   margin-top: 50px;
+  border-radius: 5px;
 }
 #box-header {
-  background-color: rgb(11, 11, 31);
+  font-size: 18px;
+  background-color: #0b0b1f;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+h1 {
+  font-family: "Edu AU VIC WA NT Guides", cursive;
+  padding: 5px 0px;
+  font-weight: 400;
 }
 #city-container {
   padding: 20px;
+}
+#select {
+  background-color: white;
+  color: rgb(20, 20, 62);
+  border: solid 1px #ffffff;
+  border-radius: 2px;
+  padding: 10px 5px;
+  width: 500px;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 25px;
+}
+hr {
+  border: solid 0.5px white;
+}
+#city-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#city-name {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 15px 0px;
+}
+#city-date {
+  font-size: 18px;
+  font-weight: 200;
+  margin: 5px 0px;
+}
+#city-time {
+  font-size: 32px;
+  font-weight: 600;
 }
 #footer-box {
   padding: 20px;
