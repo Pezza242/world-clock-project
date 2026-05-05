@@ -15,11 +15,14 @@ function updateCityTime() {
     let cityTime = moment.tz(tzCity).format("H:mm:ss [<small>]A[</small>]");
 
     addCities += `
-    <div class="left">        
-            <h2 class="city-name">${city}</h2>
+    <div class="city">
+      <div class="left">        
+          <h2 class="city-name">${city}</h2>
           <p class="city-date">${cityDate}</p>
         </div>
-          <div class="city-time">${cityTime}</div>`;
+          <div class="city-time">${cityTime}</div>
+  </div>
+  <hr>`;
   });
   citySection.innerHTML = addCities;
 }
@@ -34,12 +37,14 @@ function updateCity(event) {
   let cityTime = moment.tz(cityTz).format("H:mm:ss [<small>]A[</small>]");
   let city = document.querySelector("#city-section");
 
-  city.innerHTML = `       
-   <div class="left">        
-            <h2 class="city-name">${cityName}</h2>
+  city.innerHTML = `  
+  <div class="city">
+      <div class="left">        
+          <h2 class="city-name">${cityName}</h2>
           <p class="city-date">${cityDate}</p>
         </div>
-          <div class="city-time">${cityTime}</div>`;
+          <div class="city-time">${cityTime}</div>
+  </div>`;
 }
 
 updateCityTime();

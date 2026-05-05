@@ -39,12 +39,18 @@ h1 {
 hr {
   border: solid 0.5px white;
 }
-#city-section {
+
+.city {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
 .city-name {
   font-size: 32px;
   font-weight: 500;
