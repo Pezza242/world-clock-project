@@ -1,8 +1,8 @@
 function updateCityTime() {
   let tzCities = [
     "America/Los_Angeles",
-    "Europe/Rome",
     "Africa/Lagos",
+    "Europe/Rome",
     "Asia/Dubai",
     "Australia/Melbourne",
   ];
