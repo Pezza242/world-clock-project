@@ -58,6 +58,9 @@ hr {
   font-size: 32px;
   font-weight: 600;
 }
+small {
+  font-size: 21px;
+}
 #footer-box {
   padding: 20px;
 }
