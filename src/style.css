@@ -2,6 +2,11 @@ body {
   background-color: rgb(20, 20, 62);
   font-family: "Roboto", sans-serif;
 }
+@media (max-width: 500px) {
+  #select {
+    max-width: 300px;
+  }
+}
 #box {
   color: white;
   background-color: rgb(255, 255, 255, 0.2);
